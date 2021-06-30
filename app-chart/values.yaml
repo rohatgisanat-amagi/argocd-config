@@ -1,0 +1,9 @@
+prometheus-blackbox-exporter:
+  serviceMonitor:
+    enabled: true
+    targets:
+      - name: from-config-repo-1                    # Human readable URL that will appear in Prometheus / AlertManager
+        url: https://google.com/  # The URL that blackbox will scrape
+        interval: 15s                    # Scraping interval. Overrides value set in `defaults`
+        scrapeTimeout: 15s               # Scrape timeout. Overrides value set in `defaults`
+        module: http_2xx
